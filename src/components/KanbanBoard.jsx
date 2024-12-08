@@ -10,7 +10,7 @@ const stages = ["To Do", "In Progress", "Peer Review", "Done"];
 const KanbanBoard = () => {
   const [search, setSearch] = useState("");
   const [showModal, setShowModal] = useState(false);
-  const [taskToEdit, setTaskToEdit] = useState(null);
+  // const [taskToEdit, setTaskToEdit] = useState(null);
   const tasks = useSelector((state) => state.tasks);
   const dispatch = useDispatch();
 
@@ -33,22 +33,22 @@ const KanbanBoard = () => {
     <div className="p-6">
       <input
         type="text"
-        className="mb-4 w-full p-2 border rounded"
+        className="mb-4 w-full p-2 border rounded-2xl"
         placeholder="Search tasks..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
       <DragDropContext onDragEnd={handleDragEnd}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 rounded-2xl">
           {stages.map((stage) => (
             <Droppable key={stage} droppableId={stage}>
               {(provided) => (
                 <div
                   ref={provided.innerRef}
                   {...provided.droppableProps}
-                  className="p-4 bg-white rounded shadow-md"
+                  className="p-4 bg-white rounded shadow-md rounded-2xl"
                 >
-                  <h2 className="text-lg font-bold mb-2">{stage}</h2>
+                  <h2 className="text-lg font-bold mb-2 rounded-2xl">{stage}</h2>
                   {filteredTasks
                     .filter((task) => task.stage === stage)
                     .map((task, index) => (
@@ -61,7 +61,7 @@ const KanbanBoard = () => {
                           >
                             <TaskCard
                               task={task}
-                              onEdit={setTaskToEdit}
+                              // onEdit={setTaskToEdit}
                               isEditable={stage !== "Done"}
                             />
                           </div>
@@ -76,18 +76,19 @@ const KanbanBoard = () => {
         </div>
       </DragDropContext>
       <button
-        className="fixed bottom-6 right-6 bg-blue-500 text-white p-4 rounded-full shadow-lg"
+        className="fixed bottom-8 right-8 bg-blue-500 text-white p-4 rounded-full shadow-lg rounded-2xl"
         onClick={() => {
-          setTaskToEdit(null);
+          // setTaskToEdit(null);
           setShowModal(true);
+          
         }}
       >
-        +
+        Add Task
       </button>
       {showModal && (
         <AddTaskModal
           onClose={() => setShowModal(false)}
-          taskToEdit={taskToEdit}
+          // taskToEdit={taskToEdit}
         />
       )}
     </div>
