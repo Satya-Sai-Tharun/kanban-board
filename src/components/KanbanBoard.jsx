@@ -10,7 +10,6 @@ const stages = ["To Do", "In Progress", "Peer Review", "Done"];
 const KanbanBoard = () => {
   const [search, setSearch] = useState("");
   const [showModal, setShowModal] = useState(false);
-  // const [taskToEdit, setTaskToEdit] = useState(null);
   const tasks = useSelector((state) => state.tasks);
   const dispatch = useDispatch();
 
@@ -61,7 +60,6 @@ const KanbanBoard = () => {
                           >
                             <TaskCard
                               task={task}
-                              // onEdit={setTaskToEdit}
                               isEditable={stage !== "Done"}
                             />
                           </div>
