@@ -5,6 +5,7 @@ import { updateTaskStage } from "../store/taskSlice";
 const TaskCard = ({ task }) => {
   const dispatch = useDispatch();
 
+  // Function to handle stage transition
   const handleStageChange = () => {
     let nextStage;
     if (task.stage === "To Do") nextStage = "In Progress";
@@ -44,4 +45,3 @@ const TaskCard = ({ task }) => {
 };
 
 export default TaskCard;
-

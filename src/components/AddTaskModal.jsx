@@ -3,11 +3,12 @@ import { useDispatch } from "react-redux";
 import { addTask } from "../store/taskSlice";
 
 const AddTaskModal = ({ onClose }) => {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [title, setTitle] = useState(""); // State for the task title
+  const [description, setDescription] = useState(""); // State for the task description
   const [error, setError] = useState(""); // State to handle validation error
   const dispatch = useDispatch();
 
+  // Function to handle saving the task
   const handleSaveTask = () => {
     // Validate inputs
     if (!title.trim() || !description.trim()) {

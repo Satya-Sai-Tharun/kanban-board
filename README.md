@@ -1,70 +1,114 @@
-# Getting Started with Create React App
+# Kanban Board Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This application is a Kanban board built with ReactJS, Tailwind CSS, and Redux. It allows users to manage tasks efficiently by adding, editing, dragging, and dropping tasks across different stages.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Add Tasks**: Add new tasks with titles and descriptions.
+- **Drag-and-Drop**: Move tasks between stages using drag-and-drop functionality.
+- **Search**: Filter tasks by title using a search bar.
+- **Dynamic Stages**: Tasks progress through `To Do`, `In Progress`, `Peer Review`, and `Done` stages.
+- **Persistent State**: State management using Redux.
 
-### `npm start`
+## Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Ensure you have the following installed on your system:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Node.js](https://nodejs.org/) (version 14 or later)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Follow these steps to set up and run the application locally:
 
-### `npm run build`
+### 1. Clone the Repository
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+https://github.com/Satya-Sai-Tharun/kanban_board.git
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2. Install Dependencies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install the necessary dependencies using npm or yarn:
 
-### `npm run eject`
+```bash
+npm install
+# or
+yarn install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 3. Start the Development Server
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Run the development server to view the application in your browser:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+# or
+yarn start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The application will be accessible at `http://localhost:3000/`.
 
-## Learn More
+### 4. Build for Production
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To build the application for production, run:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm run build
+# or
+yarn build
+```
 
-### Code Splitting
+This will create an optimized build in the `build` directory.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Project Structure
 
-### Analyzing the Bundle Size
+```
+.
+├── public                # Public assets
+├── src                   # Source code
+│   ├── components        # Reusable React components
+│   │   ├── AddTaskModal.jsx
+│   │   ├── KanbanBoard.jsx
+│   │   ├── SearchBar.jsx
+│   │   └── TaskCard.jsx
+│   ├── context           # Context API for task management
+│   │   └── taskContext.jsx
+│   ├── store             # Redux store and slices
+│   │   ├── store.js
+│   │   └── taskSlice.js
+│   ├── pages             # Page components
+│   │   └── Home.jsx
+│   ├── App.jsx           # Main application component
+│   └── index.js          # Entry point
+├── tailwind.config.js    # Tailwind CSS configuration
+├── package.json          # Project metadata and dependencies
+└── README.md             # Documentation
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Usage
 
-### Making a Progressive Web App
+1. **Adding a Task**:
+   - Click the floating "+" button to open the add task modal.
+   - Enter a task title and description and click `Save`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2. **Moving Tasks**:
+   - Drag a task card to another stage to update its progress.
 
-### Advanced Configuration
+3. **Searching Tasks**:
+   - Use the search bar to filter tasks by title.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Technologies Used
 
-### Deployment
+- **ReactJS**: Frontend library for building user interfaces.
+- **Tailwind CSS**: Utility-first CSS framework.
+- **Redux**: State management.
+- **React-Beautiful-DND**: Drag-and-drop library for React.
+- **Redux Toolkit**: Simplified Redux setup.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Acknowledgments
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [ReactJS Documentation](https://reactjs.org/)
+- [Tailwind CSS Documentation](https://tailwindcss.com/)
+- [Redux Toolkit Documentation](https://redux-toolkit.js.org/)
+- [React-Beautiful-DND Documentation](https://github.com/atlassian/react-beautiful-dnd)
